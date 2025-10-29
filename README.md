@@ -1,2 +1,2 @@
-# ck_assesment_day1 project Link-->
+# Project Link-->
 # https://ck-assesment1-scss.netlify.app/
