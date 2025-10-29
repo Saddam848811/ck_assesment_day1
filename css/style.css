@@ -5,13 +5,13 @@
 }
 
 html, body {
-  font-family: Arial, sans-serif;
-  background-color: rgb(255, 255, 255);
+  font-family: "Arial", sans-serif;
+  background-color: white;
   height: 100%;
 }
 
 .border-check {
-  border: 2px solid black;
+  border: 2px solid #000000;
 }
 
 .center-div {
@@ -29,8 +29,9 @@ html, body {
 }
 
 .our-clients-heading {
-  size: 36px;
-  color: #4D4D4D;
+  font-size: 36px;
+  color: #222222;
+  font-weight: 400;
 }
 
 .text-center {
@@ -38,23 +39,25 @@ html, body {
 }
 
 .our-clients-para {
-  size: 16;
+  font-size: 16px;
   color: #717171;
 }
 
 .our-clients-logo-con {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
   padding: 10px 20px;
   max-width: 100%;
   margin-top: 16px;
 }
 
 .our-clients-logo-con img {
-  height: 48px;
   width: 48px;
-  object-fit: contain; /* Keeps aspect ratio without distortion */
+  height: 48px;
+  object-fit: contain;
 }
 
 .manage-section-con {
@@ -66,23 +69,28 @@ html, body {
 }
 
 .manage-sec-image-con {
-  display: flex; /* Makes images in a row */
-  justify-content: center; /* Centers the whole row horizontally */
-  gap: 200px; /* Space between images */
-  align-items: center; /* Vertically aligns images if needed */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 200px;
   margin-top: 26px;
 }
 
 .manage-sec-image-con img {
   width: 299px;
   height: 260px;
-  object-fit: cover; /* ensures the image fills the box without distortion */
+  object-fit: cover;
 }
 
 .unseen-sec-con {
   margin-top: 42px;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .unseen-sec-right-sec {
@@ -92,12 +100,18 @@ html, body {
 }
 
 .primary-button {
-  background-color: #4CAF50; /* Green background */
-  color: white; /* White text */
-  border: 2px solid #4CAF50; /* Matching green border */
-  padding: 14px 32px; /* Comfortable padding */
-  font-size: 16px; /* Text size */
-  border-radius: 4px; /* Slightly rounded corners */
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: 2px solid #4CAF50;
+  padding: 14px 32px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.primary-button:hover {
+  opacity: 0.9;
+}
+.primary-button {
   height: 52px;
   width: 151px;
   margin-top: 32px;
@@ -120,6 +134,7 @@ html, body {
 .geatademo-sec-heading {
   font-size: 64px;
   color: #263238;
+  font-weight: 400;
   padding-top: 32px;
 }
 
@@ -137,8 +152,12 @@ html, body {
 .footer-con {
   height: 328px;
   background-color: #263238;
-  align-items: center;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .footer-left-sec-con {
@@ -146,9 +165,10 @@ html, body {
   width: 350px;
   margin-left: 165px;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: space-between; /* Push one to center, one to bottom */
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: nowrap;
 }
 
 .footer-right-sec-con {
@@ -156,11 +176,14 @@ html, body {
   width: 635px;
   margin-left: 125px;
   display: flex;
-  justify-content: space-between; /* Spread them across full width */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
 .footer-left-para {
-  color: #F5F7FA;
+  color: #b3b3b3;
 }
 
 .company {
@@ -171,10 +194,11 @@ html, body {
 .company-heading h1 {
   font-size: 20px;
   color: #FFFFFF;
+  font-weight: 400;
 }
 
 .company-heading p {
-  color: #F5F7FA;
+  color: #b3b3b3;
 }
 
 .support {

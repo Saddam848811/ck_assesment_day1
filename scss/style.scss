@@ -1,92 +1,84 @@
 @import 'partials/var';
 @import 'partials/mixins';
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; // optional, layout control ke liye
+  box-sizing: border-box; 
 }
+
 html, body {
-  font-family: Arial, sans-serif;
-  background-color: $primary-color;
+  font-family: $font-family-base;
+  background-color: white;
   height: 100%;
 }
+
 .border-check{
-        border: 2px solid black;
-        
-
-
+    border: $border-width $border-style $border-color;
 }
+
 .center-div{
     height: 100%;
-    margin-left: 165px;
-    margin-right: 165px;
+    margin-left: $margin-content-sides;
+    margin-right: $margin-content-sides;
     //   margin: 0 20px;
 }
+
 .our-clients{
     height: 190px;
 }
+
 .our-clients-heading-con{
     height: 76px;
 }
-.our-clients-heading{
 
-    size: 36px;
-    color: $headingcolors;
+.our-clients-heading{
+    @include heading-style($font-size-lg, $heading-color);
 }
+
 .text-center{
-    text-align: center;
+    @include text-center;
 }
 
 .our-clients-para {
-    size: $para16px;
-    color: $paracolor;
+    font-size: $font-size-sm;
+    color: #717171;
 }
 
 .our-clients-logo-con{
-    display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  max-width: 100%;
-  margin-top: 16px;
-  
+    @include flex-container(row, space-between, center, nowrap);
+    padding: $padding-default;
+    max-width: 100%;
+    margin-top: $gap-small;
 }
 
 .our-clients-logo-con img {
-  height: 48px;
-  width: 48px;
-  object-fit: contain; /* Keeps aspect ratio without distortion */
+  @include image-box($image-size-logo, $image-size-logo, contain);
 }
 
 .manage-section-con{
-    margin-top: 40px;
+    margin-top: $margin-section-top;
 }
+
 .manage-sec-para{
     margin-top: 8px;
 }
 
 .manage-sec-image-con {
-  display: flex;                /* Makes images in a row */
-  justify-content: center;      /* Centers the whole row horizontally */
-  gap: 200px;                    /* Space between images */
-  align-items: center;          /* Vertically aligns images if needed */
-  flex-wrap: wrap;              /* Allows wrapping on smaller screens */
+    @include flex-container(row, center, center, wrap);
+    gap: $gap-large;
     margin-top: 26px;
 }
+
 .manage-sec-image-con img {
-  width: 299px;
-  height: 260px;
-  object-fit: cover; /* ensures the image fills the box without distortion */
+  @include image-box($image-width-card, $image-height-card, cover);
 }
 
 .unseen-sec-con{
     // height: 420px;
     margin-top: 42px;
-    display: flex;
-
+    @include flex-container();
 }
-
-
 
 .unseen-sec-right-sec {
     margin-top: 82px;
@@ -95,19 +87,14 @@ html, body {
 }
 
 .primary-button{
-background-color: #4CAF50;   /* Green background */
-  color: white;                /* White text */
-  border: 2px solid #4CAF50;   /* Matching green border */
-  padding: 14px 32px;          /* Comfortable padding */
-  font-size: 16px;             /* Text size */
-  border-radius: 4px;          /* Slightly rounded corners */
-  height: 52px;width: 151px;
-  margin-top: 32px;
-
+    @include button-style($button-bg, $button-text-color, $button-border-color, $button-padding, $button-radius, $button-font-size);
+    height: 52px;
+    width: 151px;
+    margin-top: $gap-medium;
 }
 
 .right-sec-para{
-    margin-top: 16px;
+    margin-top: $gap-small;
 }
 
 .unseen-sec-img-con{
@@ -115,67 +102,51 @@ background-color: #4CAF50;   /* Green background */
 }
 
 .getademo-sec-con{
-
-        height: 300px;
-        background-color: #F5F7FA;
-        margin-top: 28px;
+    height: 300px;
+    background-color:#F5F7FA;
+    margin-top: 28px;
 }
 
 .geatademo-sec-heading{
-font-size: 64px;
-color: #263238;
-padding-top: 32px;
+    @include heading-style($font-size-xl, $footer-bg-color);
+    padding-top: $gap-medium;
 }
 
 .getademo-sec-button{
-    width: 178px ;
+    width: 178px;
     height: 52px;
-     display: block;     /* Ensure it behaves like a block element */
-//   margin: 0 auto; 
-margin-left: 631px;
-    
+    display: block;     /* Ensure it behaves like a block element */
+    margin-left: 631px;
 }
-.geatademo-sec-button-con{
 
-    padding-top: 32px;
-    
-    
+.geatademo-sec-button-con{
+    padding-top: $gap-medium;
 }
 
 .footer-con{
-
     height: 328px;
-    // background-color: white;
-    background-color: #263238;
-align-items: center;
-
-    display: flex;
+    background-color: $footer-bg-color;
+    @include flex-container();
+    align-items: center;
 }
 
 .footer-left-sec-con{
-
-        height: 189px;
-        width: 350px;
-        margin-left: 165px;
-        display: flex;
-  flex-direction: column;      /* Stack items vertically */
-  justify-content: space-between; /* Push one to center, one to bottom */
-  align-items: flex-start;
+    height: 189px;
+    width: 350px;
+    margin-left: $margin-content-sides;
+    @include flex-container(column, space-between, flex-start);
 }
 
 .footer-right-sec-con{
-
-        height: 189px;
-        width: 635px;
-        margin-left:125px;
-        display: flex;
-        justify-content: space-between; /* Spread them across full width */
-//   align-items: center; 
+    height: 189px;
+    width: 635px;
+    margin-left: 125px;
+    @include flex-container(row, space-between, stretch, nowrap);
 }
 
-    .footer-left-para{
-        color: #F5F7FA;
-    }
+.footer-left-para{
+    color: $footer-text-color;
+}
 
 .company{
     height: 200px;
@@ -183,126 +154,19 @@ align-items: center;
 }
 
 .company-heading h1{
-    font-size: 20px;
-    color: #FFFFFF;
+    @include heading-style($font-size-md, #FFFFFF);
 }
+
 .company-heading p{
-    color: #F5F7FA;
+    color: $footer-text-color;
 }
 
 .support{
     height: 200px;
     width: 160px;
 }
+
 .date{
     height: 92px;
     width: 255px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
